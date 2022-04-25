@@ -7,7 +7,8 @@ from IPython import get_ipython
 ipython = get_ipython()
 
 f = open('file.txt')
-bibel = f.read()
+bibel_text = f.read()
+bibel = ""
 
 
 def find_brute(t, p):
@@ -112,11 +113,18 @@ def do_kmp(p):
         print(find_kmp(bibel, 'Moin'))
 
 
-print("Brute Force: ", end='')
-ipython.run_line_magic("timeit",  "do_brute_force(0)")
+for a in range(5, 100):
 
-print("Boyer Moore: ", end='')
-ipython.run_line_magic("timeit",  "do_boyer_moore(0)")
+    bibel = bibel_text[:a] + "Moin"
+    print(str(len(bibel)))
 
-print("KMP: ", end='')
-ipython.run_line_magic("timeit",  "do_kmp(0)")
+    # print("Länge " + str(i))
+    # print(bibel)
+    print("Brute Force: ", end='')
+    ipython.run_line_magic("timeit",  "do_brute_force(0)")
+
+    print("Boyer Moore: ", end='')
+    ipython.run_line_magic("timeit",  "do_boyer_moore(0)")
+
+    print("KMP: ", end='')
+    ipython.run_line_magic("timeit",  "do_kmp(0)")
