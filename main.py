@@ -26,6 +26,8 @@ class Logger:
 f = open('file.txt')
 bibel_text = f.read()
 bibel = ""
+# p = open('pattern.txt')
+# pattern = p.read()
 pattern = "Moin"
 
 
@@ -147,7 +149,9 @@ for a in range(start, end, int((end - start) / 191)):
 
     # os.system("cls")
     # print("Pattern: " + pattern)
-    bibel = bibel_text[:a] + pattern
+    a_first = int(a/2)
+    a_last = a - a_first
+    bibel = bibel_text[:a_last] + pattern + bibel_text[a_last:a]
 
     # bibel = bibel_text + "Moin"
 
