@@ -26,9 +26,9 @@ class Logger:
 f = open('file.txt')
 bibel_text = f.read()
 bibel = ""
-# p = open('pattern.txt')
-# pattern = p.read()
-pattern = "Moin"
+p = open('pattern.txt')
+pattern = p.read()
+# pattern = "Moin"
 
 
 def find_brute(t, p):
